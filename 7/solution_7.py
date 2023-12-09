@@ -1,4 +1,4 @@
-from puzzle_input import p_input, cards_values, type_values, input2
+from input_7 import p_input, cards_values, type_values, input2
 
 hands_order = '''32T3K 765
 T55J5 684
