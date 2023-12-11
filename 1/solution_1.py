@@ -9,10 +9,11 @@ treb7uchet'''
 calibration = '''nkzjrdqrmpztpqninetwofour1znnkd
 s5sevenxrdfr4mhpstgbjcfqckronesix
 3four4
-sfdrtpvspsixsn5zbqmggb8vgkjseight'''
+sfdrtpvspsixsn5zbqmggb8vgkjseight
+'''
 
 
-def get_numerics(calib: list):
+def get_numerics(calib):
     calib_format = calib.split('\n')
     result = []
     for item in calib_format:
@@ -21,7 +22,7 @@ def get_numerics(calib: list):
     return result
 
 
-def calib_value(calib: list):
+def calib_value(calib: list) -> list:
     result = []
     for item in calib:
         number_len = len(item)
@@ -35,7 +36,7 @@ def calib_value(calib: list):
     return result
 
 
-def get_values(raw_values: list):
+def total_value(raw_values: list) -> int:
     number = 0
     values = calib_value(raw_values)
     for item in values:
@@ -43,7 +44,8 @@ def get_values(raw_values: list):
     return number
 
 
-test1 = get_numerics(test_input)
-print(get_values(test1))
+if __name__ == "__main__":
+    test1 = get_numerics(calibration_doc)
+    print(total_value(test1))
 
 # Essai 1 : 56506
