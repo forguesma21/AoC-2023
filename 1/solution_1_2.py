@@ -38,8 +38,8 @@ s5sevenxrdfr4mhpstgbjcfqckronesix
 sfdrtpvspsixsn5zbqmggb8vgkjseight
 three3ninefive'''
 
-test_case = '''three3ninefive
-7pqrstsixteen'''
+test_case = '''fnm3oneightsdn
+'''
 
 
 def replace_words(calib, replacements):
@@ -68,13 +68,17 @@ def replace_words(calib, replacements):
 def replace_words2(calib, replacements):
     for key, value in replacements.items():
         index = calib.find(key)
+        # print(index)
         while index != -1:
             updated_index = index + len(key)
             if updated_index < len(calib) and calib[updated_index].isalpha():
-                calib = calib[:updated_index] + value + calib[updated_index:]
+                calib = calib[:updated_index] + value + calib[updated_index -
+                                                              1] + calib[updated_index:]
             else:
                 calib = calib[:updated_index] + value + calib[updated_index -
                                                               1:] if updated_index > 0 else value + calib[updated_index:]
+                # calib = calib[:updated_index] + value + calib[updated_index -
+                # 1] + calib[updated_index:]
             index = calib.find(key, updated_index)
     return calib
 
@@ -117,8 +121,10 @@ if __name__ == "__main__":
     # utiliser get_numerics sur l'input
     # ensuite total_value
 
+    # res2 = replace_words2(real_test, str_digit)
     res2 = get_numerics(calibration_doc)
-    print(res2)
+    # res2 = calib_value(res2)
+    print(total_value(res2))
 
     # print(replace_words2(calibration_doc, str_digit))
 
@@ -129,3 +135,4 @@ if __name__ == "__main__":
 # Essai 2 : 57015 --> too high .. again
 # Essai 3 : 56727 -- > too high
 # Essai 4 : 55954 -- > too low
+# Essai 5 : 56017
