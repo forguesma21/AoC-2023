@@ -77,6 +77,8 @@ def get_id_limits(game_lists, qty_red, qty_green, qty_blue):
     return total_ids
 
 
-print(get_id_limits(puzzle2, 12, 13, 14))
+if __name__ == "__main__":
+
+    print(get_id_limits(puzzle2, 12, 13, 14))
 
 # Essai 1 : 2176
