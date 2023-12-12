@@ -78,3 +78,5 @@ def get_id_limits(game_lists, qty_red, qty_green, qty_blue):
 
 
 print(get_id_limits(puzzle2, 12, 13, 14))
+
+# Essai 1 : 2176
